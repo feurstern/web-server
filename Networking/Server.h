@@ -10,7 +10,7 @@ struct Server
     int domain;
     int service;
     int protocol;
-    u_long interface;
+    long interface;
     int port;
     int backlog;
 
@@ -22,9 +22,7 @@ struct Server
 };
 
 
-struct Server server_constructor(int domain, int service, int protocol, u_long interface, int port, int backlog, void(*launch)(void));
-
-
+struct Server server_constructor(int domain, int service, int protocol, long interface, int port, int backlog, void(*launch)(struct Server*server));
 
 
 #endif
